@@ -15,9 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+/*Route::get('/medicamentos', function () {
+    return view('consulta-medicamentos');
+});*/
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+/*Route::get('/consulta', 'PacienteController@consulta');
+Route::get('/exame', 'ExamesController@homeExame');
+Route::get('/medicamentos', 'MedicamentoController@listaMedicamento');
+Route::post('/paciente', 'PacienteController@lista');*/
 
 Route::get('/consulta', ['uses'=>'HomeController@consulta','as'=>'consultaUsuario.index']);
 Route::get('/exame', ['uses'=>'ExamesController@listaExame','as'=>'exame.index']);
